@@ -1,11 +1,16 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {Controller, Get, Post, Body, Patch, Param, Delete, UseGuards} from '@nestjs/common';
 import { TodoService } from './todo.service';
 import { CreateTodoDto } from './dto/create-todo.dto';
 import { UpdateTodoDto } from './dto/update-todo.dto';
+import { AuthGuard } from "../auth/auth.guard";
+import {ApiBearerAuth} from "@nestjs/swagger";
 
+@ApiBearerAuth('token')
+@UseGuards(AuthGuard)
 @Controller('todo')
 export class TodoController {
   constructor(private readonly todoService: TodoService) {}
+
 
   @Post()
   create(@Body() createTodoDto: CreateTodoDto) {
