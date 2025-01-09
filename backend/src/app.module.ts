@@ -32,7 +32,6 @@ import { UsersModule } from './users/users.module';
     TodoModule,
     AuthModule,
     UsersModule,
-    // ConfigModule,
   ],
   controllers: [AppController],
   providers: [AppService],

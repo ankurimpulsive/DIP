@@ -1,3 +1,3 @@
 export const environment = {
-  baseUrl: 'https://example.com'
+  baseUrl: 'http://api.i99.in'
 }

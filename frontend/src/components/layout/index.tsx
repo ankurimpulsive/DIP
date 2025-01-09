@@ -130,13 +130,13 @@ export function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Todos
+            Todo App
           </Typography>
           {isLoggedIn() && <Button color="inherit" onClick={handleLogout}>Logout</Button>}
         </Toolbar>
       </AppBar>
 
-      {!isLoggedIn() && <Box display={'flex'} justifyContent={'space-between'} marginTop={'10px'}>
+      {!isLoggedIn() && <Box display={'flex'} gap={"20px"} marginTop={'10px'}>
         <TextField id="outlined-basic" label="Username" variant="outlined" value={username} onChange={(e) => {
           setUsername(e.target.value)
         }}/>
